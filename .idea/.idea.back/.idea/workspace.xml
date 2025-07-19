@@ -9,9 +9,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56cc2e33-5427-4d4e-b1bd-912cb19d687c" name="Changes" comment="">
+    <list default="true" id="56cc2e33-5427-4d4e-b1bd-912cb19d687c" name="Changes" comment="Initializing server epicery project">
       <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources/339379de-cf70-4082-885f-c6217500ca88.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources/339379de-cf70-4082-885f-c6217500ca88/storage_v2/_src_/database/csepicerie_db.34hP8w.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources/339379de-cf70-4082-885f-c6217500ca88/storage_v2/_src_/database/csepicerie_db.34hP8w/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources/339379de-cf70-4082-885f-c6217500ca88/storage_v2/_src_/database/csepicerie_db.34hP8w/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources/339379de-cf70-4082-885f-c6217500ca88/storage_v2/_src_/database/csepicerie_db.34hP8w/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back.sln" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/back/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Achat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Category.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Client.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/CsepicerieDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Depense.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/DetailsAchat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/DetailsVente.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Fournisseur.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Parametre.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Permission.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Pointage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Produit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Rapport.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Role.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/RolesPermission.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Sauvegarde.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/StockMouvement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Utilisateur.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Models/Vente.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/Properties/launchSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/back.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/back.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,34 +60,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="305KhWuDUGPlTXUMcD4MwFfN422" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.back: http">
     <configuration name="back: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/back/back.csproj" />
@@ -81,7 +121,10 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
     <configuration name="back/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
@@ -103,16 +146,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752912150096</updated>
-      <workItem from="1752912203056" duration="1091000" />
+      <workItem from="1752912203056" duration="1495000" />
     </task>
+    <task id="LOCAL-00001" summary="Initializing server epicery project">
+      <option name="closed" value="true" />
+      <created>1752914068645</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752914068645</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Initializing server epicery project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initializing server epicery project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
