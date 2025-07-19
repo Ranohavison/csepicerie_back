@@ -48,6 +48,12 @@ app.MapAchatEndpoints();
 
 app.MapCategoryEndpoints();
 
+app.MapClientEndpoints();
+
+app.MapDepenseEndpoints();
+
+app.MapDetailsVenteEndpoints();
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
