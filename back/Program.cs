@@ -60,6 +60,12 @@ app.MapFournisseurEndpoints();
 
 app.MapParametreEndpoints();
 
+app.MapPermissionEndpoints();
+
+app.MapPointageEndpoints();
+
+app.MapProduitEndpoints();
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
