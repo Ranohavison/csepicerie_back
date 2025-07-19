@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56cc2e33-5427-4d4e-b1bd-912cb19d687c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/back.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/back/back.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="56cc2e33-5427-4d4e-b1bd-912cb19d687c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752912150096</updated>
-      <workItem from="1752912203056" duration="4388000" />
+      <workItem from="1752912203056" duration="4690000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing server epicery project">
       <option name="closed" value="true" />
@@ -144,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752914130530</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add first achatEndpoint.">
+      <option name="closed" value="true" />
+      <created>1752917345314</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752917345314</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +160,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Initializing server epicery project" />
     <MESSAGE value="Update project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update project" />
+    <MESSAGE value="Add first achatEndpoint." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add first achatEndpoint." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
