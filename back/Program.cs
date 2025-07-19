@@ -1,4 +1,5 @@
 using back.AchatEndpoints;
+using back.Endpoints;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -38,6 +39,8 @@ app.MapGet("/weatherforecast", () =>
     .WithOpenApi();
 
 app.MapAchatEndpoints();
+
+app.MapCategoryEndpoints();
 
 app.Run();
 
