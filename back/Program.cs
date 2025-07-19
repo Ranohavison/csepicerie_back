@@ -54,6 +54,12 @@ app.MapDepenseEndpoints();
 
 app.MapDetailsVenteEndpoints();
 
+app.MapDetailsAchatEndpoints();
+
+app.MapFournisseurEndpoints();
+
+app.MapParametreEndpoints();
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
