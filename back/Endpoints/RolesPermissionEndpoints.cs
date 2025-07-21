@@ -15,7 +15,8 @@ public static class RolesPermissionEndpoints
         {
             return await db.RolesPermissions.ToListAsync();
         })
-        .WithName("GetAllRolesPermissions");
+        .WithName("GetAllRolesPermissions")
+        .WithGroupName("parametres");
 
         group.MapGet("/{id}", async Task<Results<Ok<RolesPermission>, NotFound>> (int id, [FromServices] CsepicerieDbContext db) =>
         {
@@ -25,7 +26,8 @@ public static class RolesPermissionEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetRolesPermissionById");
+        .WithName("GetRolesPermissionById")
+        .WithGroupName("parametres");
 
         group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int id, [FromBody] RolesPermission rolesPermission, [FromServices] CsepicerieDbContext db) =>
         {
@@ -38,7 +40,8 @@ public static class RolesPermissionEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateRolesPermission");
+        .WithName("UpdateRolesPermission")
+        .WithGroupName("parametres");
 
         group.MapPost("/", async ([FromBody] RolesPermission rolesPermission, [FromServices] CsepicerieDbContext db) =>
         {
@@ -46,7 +49,8 @@ public static class RolesPermissionEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/RolesPermission/{rolesPermission.Id}",rolesPermission);
         })
-        .WithName("CreateRolesPermission");
+        .WithName("CreateRolesPermission")
+        .WithGroupName("parametres");
 
         group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int id, [FromServices] CsepicerieDbContext db) =>
         {
@@ -55,6 +59,7 @@ public static class RolesPermissionEndpoints
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteRolesPermission");
+        .WithName("DeleteRolesPermission")
+        .WithGroupName("parametres");
     }
 }

@@ -15,9 +15,10 @@ public static class DepenseEndpoints
         {
             return await db.Depenses.ToListAsync();
         })
-        .WithName("GetAllDepenses");
+        .WithName("GetAllDepenses")
+        .WithGroupName("transactions");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Depense>, NotFound>> (int iddepense,[FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{iddepense}", async Task<Results<Ok<Depense>, NotFound>> (int iddepense,[FromServices] CsepicerieDbContext db) =>
         {
             return await db.Depenses.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdDepense == iddepense)
@@ -25,9 +26,10 @@ public static class DepenseEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetDepenseById");
+        .WithName("GetDepenseById")
+        .WithGroupName("transactions");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int iddepense, [FromBody] Depense depense,[FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{iddepense}", async Task<Results<Ok, NotFound>> (int iddepense, [FromBody] Depense depense,[FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Depenses
                 .Where(model => model.IdDepense == iddepense)
@@ -41,7 +43,8 @@ public static class DepenseEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateDepense");
+        .WithName("UpdateDepense")
+        .WithGroupName("transactions");
 
         group.MapPost("/", async ( [FromBody] Depense depense,[FromServices] CsepicerieDbContext db) =>
         {
@@ -49,15 +52,17 @@ public static class DepenseEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Depense/{depense.IdDepense}",depense);
         })
-        .WithName("CreateDepense");
+        .WithName("CreateDepense")
+        .WithGroupName("transactions");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int iddepense,[FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{iddepense}", async Task<Results<Ok, NotFound>> (int iddepense,[FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Depenses
                 .Where(model => model.IdDepense == iddepense)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteDepense");
+        .WithName("DeleteDepense")
+        .WithGroupName("transactions");
     }
 }

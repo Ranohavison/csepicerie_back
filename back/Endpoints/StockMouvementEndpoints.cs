@@ -15,7 +15,8 @@ public static class StockMouvementEndpoints
         {
             return await db.StockMouvements.ToListAsync();
         })
-        .WithName("GetAllStockMouvements");
+        .WithName("GetAllStockMouvements")
+        .WithGroupName("catalogue");
 
         group.MapGet("/{id}", async Task<Results<Ok<StockMouvement>, NotFound>> (int id, [FromServices] CsepicerieDbContext db) =>
         {
@@ -25,7 +26,8 @@ public static class StockMouvementEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetStockMouvementById");
+        .WithName("GetStockMouvementById")
+        .WithGroupName("catalogue");
 
         group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int id, [FromBody] StockMouvement stockMouvement, [FromServices] CsepicerieDbContext db) =>
         {
@@ -41,7 +43,8 @@ public static class StockMouvementEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateStockMouvement");
+        .WithName("UpdateStockMouvement")
+        .WithGroupName("catalogue");
 
         group.MapPost("/", async ([FromBody] StockMouvement stockMouvement, [FromServices] CsepicerieDbContext db) =>
         {
@@ -49,7 +52,8 @@ public static class StockMouvementEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/StockMouvement/{stockMouvement.Id}",stockMouvement);
         })
-        .WithName("CreateStockMouvement");
+        .WithName("CreateStockMouvement")
+        .WithGroupName("catalogue");
 
         group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int id, [FromServices] CsepicerieDbContext db) =>
         {
@@ -58,6 +62,7 @@ public static class StockMouvementEndpoints
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteStockMouvement");
+        .WithName("DeleteStockMouvement")
+        .WithGroupName("catalogue");
     }
 }

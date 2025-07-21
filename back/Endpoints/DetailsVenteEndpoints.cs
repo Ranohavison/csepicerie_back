@@ -15,7 +15,8 @@ public static class DetailsVenteEndpoints
         {
             return await db.DetailsVentes.ToListAsync();
         })
-        .WithName("GetAllDetailsVentes");
+        .WithName("GetAllDetailsVentes")
+        .WithGroupName("transactions");
 
         group.MapGet("/{id}", async Task<Results<Ok<DetailsVente>, NotFound>> (int id, [FromServices]  CsepicerieDbContext db) =>
         {
@@ -25,7 +26,8 @@ public static class DetailsVenteEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetDetailsVenteById");
+        .WithName("GetDetailsVenteById")
+        .WithGroupName("transactions");
 
         group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int id, [FromBody] DetailsVente detailsVente, [FromServices] CsepicerieDbContext db) =>
         {
@@ -41,7 +43,8 @@ public static class DetailsVenteEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateDetailsVente");
+        .WithName("UpdateDetailsVente")
+        .WithGroupName("transactions");
 
         group.MapPost("/", async ( [FromBody] DetailsVente detailsVente, [FromServices] CsepicerieDbContext db) =>
         {
@@ -49,7 +52,8 @@ public static class DetailsVenteEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/DetailsVente/{detailsVente.Id}",detailsVente);
         })
-        .WithName("CreateDetailsVente");
+        .WithName("CreateDetailsVente")
+        .WithGroupName("transactions");
 
         group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int id, [FromServices] CsepicerieDbContext db) =>
         {
@@ -58,6 +62,7 @@ public static class DetailsVenteEndpoints
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteDetailsVente");
+        .WithName("DeleteDetailsVente")
+        .WithGroupName("transactions");
     }
 }

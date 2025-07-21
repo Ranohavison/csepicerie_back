@@ -15,9 +15,10 @@ public static class ParametreEndpoints
         {
             return await db.Parametres.ToListAsync();
         })
-        .WithName("GetAllParametres");
+        .WithName("GetAllParametres")
+        .WithGroupName("parametres");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Parametre>, NotFound>> (int idparam,[FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{idparam}", async Task<Results<Ok<Parametre>, NotFound>> (int idparam,[FromServices] CsepicerieDbContext db) =>
         {
             return await db.Parametres.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdParam == idparam)
@@ -25,9 +26,10 @@ public static class ParametreEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetParametreById");
+        .WithName("GetParametreById")
+        .WithGroupName("parametres");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int idparam, [FromBody] Parametre parametre,[FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{idparam}", async Task<Results<Ok, NotFound>> (int idparam, [FromBody] Parametre parametre,[FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Parametres
                 .Where(model => model.IdParam == idparam)
@@ -39,7 +41,8 @@ public static class ParametreEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateParametre");
+        .WithName("UpdateParametre")
+        .WithGroupName("parametres");
 
         group.MapPost("/", async ( [FromBody] Parametre parametre,[FromServices] CsepicerieDbContext db) =>
         {
@@ -47,15 +50,17 @@ public static class ParametreEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Parametre/{parametre.IdParam}",parametre);
         })
-        .WithName("CreateParametre");
+        .WithName("CreateParametre")
+        .WithGroupName("parametres");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int idparam,[FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{idparam}", async Task<Results<Ok, NotFound>> (int idparam,[FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Parametres
                 .Where(model => model.IdParam == idparam)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteParametre");
+        .WithName("DeleteParametre")
+        .WithGroupName("parametres");
     }
 }

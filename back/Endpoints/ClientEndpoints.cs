@@ -15,9 +15,10 @@ public static class ClientEndpoints
         {
             return await db.Clients.ToListAsync();
         })
-        .WithName("GetAllClients");
+        .WithName("GetAllClients")
+        .WithGroupName("transactions");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Client>, NotFound>> (int idclient,[FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{idclient}", async Task<Results<Ok<Client>, NotFound>> (int idclient,[FromServices] CsepicerieDbContext db) =>
         {
             return await db.Clients.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdClient == idclient)
@@ -25,9 +26,10 @@ public static class ClientEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetClientById");
+        .WithName("GetClientById")
+        .WithGroupName("transactions");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int idclient, [FromBody] Client client,[FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{idclient}", async Task<Results<Ok, NotFound>> (int idclient, [FromBody] Client client,[FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Clients
                 .Where(model => model.IdClient == idclient)
@@ -41,7 +43,8 @@ public static class ClientEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateClient");
+        .WithName("UpdateClient")
+        .WithGroupName("transactions");
 
         group.MapPost("/", async ( [FromBody] Client client, [FromServices] CsepicerieDbContext db) =>
         {
@@ -49,15 +52,17 @@ public static class ClientEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Client/{client.IdClient}",client);
         })
-        .WithName("CreateClient");
+        .WithName("CreateClient")
+        .WithGroupName("transactions");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int idclient,[FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{idclient}", async Task<Results<Ok, NotFound>> (int idclient,[FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Clients
                 .Where(model => model.IdClient == idclient)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteClient");
+        .WithName("DeleteClient")
+        .WithGroupName("transactions");
     }
 }

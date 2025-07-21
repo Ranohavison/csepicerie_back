@@ -15,9 +15,10 @@ public static class RoleEndpoints
         {
             return await db.Roles.ToListAsync();
         })
-        .WithName("GetAllRoles");
+        .WithName("GetAllRoles")
+        .WithGroupName("parametres");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Role>, NotFound>> (int idrole, [FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{idrole}", async Task<Results<Ok<Role>, NotFound>> (int idrole, [FromServices] CsepicerieDbContext db) =>
         {
             return await db.Roles.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdRole == idrole)
@@ -25,9 +26,10 @@ public static class RoleEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetRoleById");
+        .WithName("GetRoleById")
+        .WithGroupName("parametres");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int idrole, [FromBody] Role role, [FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{idrole}", async Task<Results<Ok, NotFound>> (int idrole, [FromBody] Role role, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Roles
                 .Where(model => model.IdRole == idrole)
@@ -38,7 +40,8 @@ public static class RoleEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateRole");
+        .WithName("UpdateRole")
+        .WithGroupName("parametres");
 
         group.MapPost("/", async ([FromBody] Role role, [FromServices] CsepicerieDbContext db) =>
         {
@@ -46,15 +49,17 @@ public static class RoleEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Role/{role.IdRole}",role);
         })
-        .WithName("CreateRole");
+        .WithName("CreateRole")
+        .WithGroupName("parametres");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int idrole, [FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{idrole}", async Task<Results<Ok, NotFound>> (int idrole, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Roles
                 .Where(model => model.IdRole == idrole)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteRole");
+        .WithName("DeleteRole")
+        .WithGroupName("parametres");
     }
 }

@@ -15,9 +15,10 @@ public static class PointageEndpoints
         {
             return await db.Pointages.ToListAsync();
         })
-        .WithName("GetAllPointages");
+        .WithName("GetAllPointages")
+        .WithGroupName("rapports");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Pointage>, NotFound>> (int idpointage, [FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{idpointage}", async Task<Results<Ok<Pointage>, NotFound>> (int idpointage, [FromServices] CsepicerieDbContext db) =>
         {
             return await db.Pointages.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdPointage == idpointage)
@@ -25,9 +26,10 @@ public static class PointageEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetPointageById");
+        .WithName("GetPointageById")
+        .WithGroupName("rapports");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int idpointage, [FromBody] Pointage pointage, [FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{idpointage}", async Task<Results<Ok, NotFound>> (int idpointage, [FromBody] Pointage pointage, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Pointages
                 .Where(model => model.IdPointage == idpointage)
@@ -40,7 +42,8 @@ public static class PointageEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdatePointage");
+        .WithName("UpdatePointage")
+        .WithGroupName("rapports");
 
         group.MapPost("/", async ([FromBody] Pointage pointage, [FromServices] CsepicerieDbContext db) =>
         {
@@ -48,15 +51,17 @@ public static class PointageEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Pointage/{pointage.IdPointage}",pointage);
         })
-        .WithName("CreatePointage");
+        .WithName("CreatePointage")
+        .WithGroupName("rapports");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int idpointage, [FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{idpointage}", async Task<Results<Ok, NotFound>> (int idpointage, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Pointages
                 .Where(model => model.IdPointage == idpointage)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeletePointage");
+        .WithName("DeletePointage")
+        .WithGroupName("rapports");
     }
 }

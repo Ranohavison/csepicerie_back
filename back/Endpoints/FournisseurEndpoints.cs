@@ -15,9 +15,10 @@ public static class FournisseurEndpoints
         {
             return await db.Fournisseurs.ToListAsync();
         })
-        .WithName("GetAllFournisseurs");
+        .WithName("GetAllFournisseurs")
+        .WithGroupName("transactions");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Fournisseur>, NotFound>> (int idfournisseur,[FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{idfournisseur}", async Task<Results<Ok<Fournisseur>, NotFound>> (int idfournisseur,[FromServices] CsepicerieDbContext db) =>
         {
             return await db.Fournisseurs.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdFournisseur == idfournisseur)
@@ -25,9 +26,10 @@ public static class FournisseurEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetFournisseurById");
+        .WithName("GetFournisseurById")
+        .WithGroupName("transactions");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int idfournisseur, [FromBody] Fournisseur fournisseur,[FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{idfournisseur}", async Task<Results<Ok, NotFound>> (int idfournisseur, [FromBody] Fournisseur fournisseur,[FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Fournisseurs
                 .Where(model => model.IdFournisseur == idfournisseur)
@@ -40,7 +42,8 @@ public static class FournisseurEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateFournisseur");
+        .WithName("UpdateFournisseur")
+        .WithGroupName("transactions");
 
         group.MapPost("/", async ( [FromBody] Fournisseur fournisseur,[FromServices] CsepicerieDbContext db) =>
         {
@@ -48,15 +51,17 @@ public static class FournisseurEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Fournisseur/{fournisseur.IdFournisseur}",fournisseur);
         })
-        .WithName("CreateFournisseur");
+        .WithName("CreateFournisseur")
+        .WithGroupName("transactions");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int idfournisseur,[FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{idfournisseur}", async Task<Results<Ok, NotFound>> (int idfournisseur,[FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Fournisseurs
                 .Where(model => model.IdFournisseur == idfournisseur)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteFournisseur");
+        .WithName("DeleteFournisseur")
+        .WithGroupName("transactions");
     }
 }

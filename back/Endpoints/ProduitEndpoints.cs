@@ -15,9 +15,10 @@ public static class ProduitEndpoints
         {
             return await db.Produits.ToListAsync();
         })
-        .WithName("GetAllProduits");
+        .WithName("GetAllProduits")
+        .WithGroupName("catalogue");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Produit>, NotFound>> (int idproduit, [FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{idproduit}", async Task<Results<Ok<Produit>, NotFound>> (int idproduit, [FromServices] CsepicerieDbContext db) =>
         {
             return await db.Produits.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdProduit == idproduit)
@@ -25,9 +26,10 @@ public static class ProduitEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetProduitById");
+        .WithName("GetProduitById")
+        .WithGroupName("catalogue");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int idproduit, [FromBody] Produit produit, [FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{idproduit}", async Task<Results<Ok, NotFound>> (int idproduit, [FromBody] Produit produit, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Produits
                 .Where(model => model.IdProduit == idproduit)
@@ -45,7 +47,8 @@ public static class ProduitEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateProduit");
+        .WithName("UpdateProduit")
+        .WithGroupName("catalogue");
 
         group.MapPost("/", async ([FromBody] Produit produit, [FromServices] CsepicerieDbContext db) =>
         {
@@ -53,15 +56,17 @@ public static class ProduitEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Produit/{produit.IdProduit}",produit);
         })
-        .WithName("CreateProduit");
+        .WithName("CreateProduit")
+        .WithGroupName("catalogue");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int idproduit, [FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{idproduit}", async Task<Results<Ok, NotFound>> (int idproduit, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Produits
                 .Where(model => model.IdProduit == idproduit)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteProduit");
+        .WithName("DeleteProduit")
+        .WithGroupName("catalogue");
     }
 }

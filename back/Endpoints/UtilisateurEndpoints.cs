@@ -15,9 +15,10 @@ public static class UtilisateurEndpoints
         {
             return await db.Utilisateurs.ToListAsync();
         })
-        .WithName("GetAllUtilisateurs");
+        .WithName("GetAllUtilisateurs")
+        .WithGroupName("auth");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Utilisateur>, NotFound>> (int idutilisateur, [FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{idutilisateur}", async Task<Results<Ok<Utilisateur>, NotFound>> (int idutilisateur, [FromServices] CsepicerieDbContext db) =>
         {
             return await db.Utilisateurs.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdUtilisateur == idutilisateur)
@@ -25,9 +26,10 @@ public static class UtilisateurEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetUtilisateurById");
+        .WithName("GetUtilisateurById")
+        .WithGroupName("auth");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int idutilisateur, [FromBody] Utilisateur utilisateur, [FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{idutilisateur}", async Task<Results<Ok, NotFound>> (int idutilisateur, [FromBody] Utilisateur utilisateur, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Utilisateurs
                 .Where(model => model.IdUtilisateur == idutilisateur)
@@ -43,7 +45,8 @@ public static class UtilisateurEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateUtilisateur");
+        .WithName("UpdateUtilisateur")
+        .WithGroupName("auth");
 
         group.MapPost("/", async ([FromBody] Utilisateur utilisateur, [FromServices] CsepicerieDbContext db) =>
         {
@@ -51,15 +54,17 @@ public static class UtilisateurEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Utilisateur/{utilisateur.IdUtilisateur}",utilisateur);
         })
-        .WithName("CreateUtilisateur");
+        .WithName("CreateUtilisateur")
+        .WithGroupName("auth");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int idutilisateur, [FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{idutilisateur}", async Task<Results<Ok, NotFound>> (int idutilisateur, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Utilisateurs
                 .Where(model => model.IdUtilisateur == idutilisateur)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteUtilisateur");
+        .WithName("DeleteUtilisateur")
+        .WithGroupName("auth");
     }
 }

@@ -15,9 +15,10 @@ public static class PermissionEndpoints
         {
             return await db.Permissions.ToListAsync();
         })
-        .WithName("GetAllPermissions");
+        .WithName("GetAllPermissions")
+        .WithGroupName("parametres");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Permission>, NotFound>> (int idpermission, [FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{idpermission}", async Task<Results<Ok<Permission>, NotFound>> (int idpermission, [FromServices] CsepicerieDbContext db) =>
         {
             return await db.Permissions.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdPermission == idpermission)
@@ -25,9 +26,10 @@ public static class PermissionEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetPermissionById");
+        .WithName("GetPermissionById")
+        .WithGroupName("parametres");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int idpermission, [FromBody] Permission permission, [FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{idpermission}", async Task<Results<Ok, NotFound>> (int idpermission, [FromBody] Permission permission, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Permissions
                 .Where(model => model.IdPermission == idpermission)
@@ -39,7 +41,8 @@ public static class PermissionEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdatePermission");
+        .WithName("UpdatePermission")
+        .WithGroupName("parametres");
 
         group.MapPost("/", async ([FromBody] Permission permission, [FromServices] CsepicerieDbContext db) =>
         {
@@ -47,15 +50,17 @@ public static class PermissionEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Permission/{permission.IdPermission}",permission);
         })
-        .WithName("CreatePermission");
+        .WithName("CreatePermission")
+        .WithGroupName("parametres");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int idpermission, [FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{idpermission}", async Task<Results<Ok, NotFound>> (int idpermission, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Permissions
                 .Where(model => model.IdPermission == idpermission)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeletePermission");
+        .WithName("DeletePermission")
+        .WithGroupName("parametres");
     }
 }

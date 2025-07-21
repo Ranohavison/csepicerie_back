@@ -15,9 +15,10 @@ public static class SauvegardeEndpoints
         {
             return await db.Sauvegardes.ToListAsync();
         })
-        .WithName("GetAllSauvegardes");
+        .WithName("GetAllSauvegardes")
+        .WithGroupName("sauvegarde");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Sauvegarde>, NotFound>> (int idsauvegarde, [FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{idsauvegarde}", async Task<Results<Ok<Sauvegarde>, NotFound>> (int idsauvegarde, [FromServices] CsepicerieDbContext db) =>
         {
             return await db.Sauvegardes.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdSauvegarde == idsauvegarde)
@@ -25,9 +26,10 @@ public static class SauvegardeEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetSauvegardeById");
+        .WithName("GetSauvegardeById")
+        .WithGroupName("sauvegarde");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int idsauvegarde, [FromBody] Sauvegarde sauvegarde, [FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{idsauvegarde}", async Task<Results<Ok, NotFound>> (int idsauvegarde, [FromBody] Sauvegarde sauvegarde, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Sauvegardes
                 .Where(model => model.IdSauvegarde == idsauvegarde)
@@ -40,7 +42,8 @@ public static class SauvegardeEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateSauvegarde");
+        .WithName("UpdateSauvegarde")
+        .WithGroupName("sauvegarde");
 
         group.MapPost("/", async ([FromBody] Sauvegarde sauvegarde, [FromServices] CsepicerieDbContext db) =>
         {
@@ -48,15 +51,17 @@ public static class SauvegardeEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Sauvegarde/{sauvegarde.IdSauvegarde}",sauvegarde);
         })
-        .WithName("CreateSauvegarde");
+        .WithName("CreateSauvegarde")
+        .WithGroupName("sauvegarde");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int idsauvegarde, [FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{idsauvegarde}", async Task<Results<Ok, NotFound>> (int idsauvegarde, [FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Sauvegardes
                 .Where(model => model.IdSauvegarde == idsauvegarde)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteSauvegarde");
+        .WithName("DeleteSauvegarde")
+        .WithGroupName("sauvegarde");
     }
 }

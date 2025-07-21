@@ -15,9 +15,10 @@ public static class CategoryEndpoints
         {
             return await db.Categories.ToListAsync();
         })
-        .WithName("GetAllCategories");
+        .WithName("GetAllCategories")
+        .WithGroupName("catalogue");
 
-        group.MapGet("/{id}", async Task<Results<Ok<Category>, NotFound>> (int idcategorie,[FromServices] CsepicerieDbContext db) =>
+        group.MapGet("/{idcategorie}", async Task<Results<Ok<Category>, NotFound>> (int idcategorie,[FromServices] CsepicerieDbContext db) =>
         {
             return await db.Categories.AsNoTracking()
                 .FirstOrDefaultAsync(model => model.IdCategorie == idcategorie)
@@ -25,9 +26,10 @@ public static class CategoryEndpoints
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
         })
-        .WithName("GetCategoryById");
+        .WithName("GetCategoryById")
+        .WithGroupName("catalogue");
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int idcategorie,[FromBody] Category category,[FromServices] CsepicerieDbContext db) =>
+        group.MapPut("/{idcategorie}", async Task<Results<Ok, NotFound>> (int idcategorie,[FromBody] Category category,[FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Categories
                 .Where(model => model.IdCategorie == idcategorie)
@@ -38,7 +40,8 @@ public static class CategoryEndpoints
                     );
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("UpdateCategory");
+        .WithName("UpdateCategory")
+        .WithGroupName("catalogue");
 
         group.MapPost("/", async ([FromBody] Category category,[FromServices] CsepicerieDbContext db) =>
         {
@@ -46,15 +49,17 @@ public static class CategoryEndpoints
             await db.SaveChangesAsync();
             return TypedResults.Created($"/api/Category/{category.IdCategorie}",category);
         })
-        .WithName("CreateCategory");
+        .WithName("CreateCategory")
+        .WithGroupName("catalogue");
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int idcategorie,[FromServices] CsepicerieDbContext db) =>
+        group.MapDelete("/{idcategorie}", async Task<Results<Ok, NotFound>> (int idcategorie,[FromServices] CsepicerieDbContext db) =>
         {
             var affected = await db.Categories
                 .Where(model => model.IdCategorie == idcategorie)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })
-        .WithName("DeleteCategory");
+        .WithName("DeleteCategory")
+        .WithGroupName("catalogue");
     }
 }

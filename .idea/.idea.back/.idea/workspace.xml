@@ -11,11 +11,34 @@
   <component name="ChangeListManager">
     <list default="true" id="56cc2e33-5427-4d4e-b1bd-912cb19d687c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/AchatEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/AchatEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/CategoryEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/CategoryEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/ClientEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/ClientEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/DepenseEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/DepenseEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/DetailsAchatEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/DetailsAchatEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/DetailsVenteEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/DetailsVenteEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/FournisseurEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/FournisseurEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/ParametreEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/ParametreEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/PermissionEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/PermissionEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/PointageEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/PointageEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/ProduitEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/ProduitEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/RapportEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/RapportEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/RoleEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/RoleEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/RolesPermissionEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/RolesPermissionEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/SauvegardeEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/SauvegardeEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/StockMouvementEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/StockMouvementEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/UtilisateurEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/UtilisateurEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Endpoints/VenteEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/VenteEndpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/back.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/back/back.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +55,10 @@
     &quot;accountId&quot;: &quot;d837e5db-831b-4231-813a-c01c04b1dbc7&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/mandresy-ranohavison/Documents/Projets/ecole/cs/epiceries/back/back/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/mandresy-ranohavison/Documents/Projets/ecole/cs/epiceries/back/back/Program.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -44,10 +71,12 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.back: http.executor&quot;: &quot;Run&quot;,
     &quot;Docker.back/Dockerfile.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mandresy-ranohavison/Documents/Projets/ecole/cs/epiceries/Client&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -125,6 +154,8 @@
       <option name="presentableId" value="Default" />
       <updated>1752912150096</updated>
       <workItem from="1752912203056" duration="4992000" />
+      <workItem from="1752920066837" duration="8391000" />
+      <workItem from="1753098301462" duration="2688000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing server epicery project">
       <option name="closed" value="true" />
@@ -158,7 +189,71 @@
       <option name="project" value="LOCAL" />
       <updated>1752917423092</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="workspace">
+      <option name="closed" value="true" />
+      <created>1752920116290</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752920116290</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add categoryEndpoints">
+      <option name="closed" value="true" />
+      <created>1752920501821</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752920501821</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add CsepicerieDbContext in program.cs">
+      <option name="closed" value="true" />
+      <created>1752921073271</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752921073271</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add ClientEndpoint, DepenseEndpoint, DetailsEndpoint">
+      <option name="closed" value="true" />
+      <created>1752921902779</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752921902779</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add Endpoint for models DetailsAchat, Fournisseur, Parametre">
+      <option name="closed" value="true" />
+      <created>1752922570193</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752922570193</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add conception directory.">
+      <option name="closed" value="true" />
+      <created>1752922750029</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752922750029</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add EndPoint for Models Permission, Pointage and Produit">
+      <option name="closed" value="true" />
+      <created>1752923478510</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752923478510</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add EndPoint for Models Rapport, Role, RolesPermission, Sauvegarde, StockMouvement, Utilisateur and Vente.">
+      <option name="closed" value="true" />
+      <created>1752924798802</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752924798802</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +267,15 @@
     <MESSAGE value="Update project" />
     <MESSAGE value="Add first achatEndpoint." />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="workspace" />
+    <MESSAGE value="add categoryEndpoints" />
+    <MESSAGE value="Add CsepicerieDbContext in program.cs" />
+    <MESSAGE value="Add ClientEndpoint, DepenseEndpoint, DetailsEndpoint" />
+    <MESSAGE value="Add Endpoint for models DetailsAchat, Fournisseur, Parametre" />
+    <MESSAGE value="Add conception directory." />
+    <MESSAGE value="Add EndPoint for Models Permission, Pointage and Produit" />
+    <MESSAGE value="Add EndPoint for Models Rapport, Role, RolesPermission, Sauvegarde, StockMouvement, Utilisateur and Vente." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add EndPoint for Models Rapport, Role, RolesPermission, Sauvegarde, StockMouvement, Utilisateur and Vente." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -189,6 +292,19 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/back/Endpoints/RolesPermissionEndpoints.cs</url>
+          <line>21</line>
+          <properties documentPath="$PROJECT_DIR$/back/Endpoints/RolesPermissionEndpoints.cs" containingFunctionPresentation="Lambda expression inside Method 'MapRolesPermissionEndpoints'">
+            <startOffsets>
+              <option value="742" />
+            </startOffsets>
+            <endOffsets>
+              <option value="743" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
