@@ -1,23 +1,36 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
-WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
+﻿# syntax=docker/dockerfile:1
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
+################################################################################
+# 🧑‍🏭 Étape 1 – Build (multi-stage) pour réduire la taille finale
+################################################################################
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+
 WORKDIR /src
-COPY ["back/back.csproj", "back/"]
-RUN dotnet restore "back/back.csproj"
+COPY *.sln ./
+COPY Epiceries.Core/*.csproj Epiceries.Core/
+COPY Epiceries.Desktop/*.csproj Epiceries.Desktop/
+COPY Epiceries.Android/*.csproj Epiceries.Android/
+RUN dotnet restore
+
 COPY . .
-WORKDIR "/src/back"
-RUN dotnet build "./back.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR /src/Epiceries.Desktop
+RUN dotnet publish -c Release -o /app/publish \
+    /p:UseAppHost=false
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./back.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
-
-FROM base AS final
+################################################################################
+# 🧰 Étape 2 – Image finale légère
+################################################################################
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "back.dll"]
+
+# Utilisation d’un utilisateur non root (sécurité)
+RUN addgroup --system appgroup && \
+    adduser --system appuser --ingroup appgroup
+
+COPY --from=build /app/publish ./
+USER appuser
+
+# Exposer le port par défaut
+EXPOSE 80
+
+ENTRYPOINT ["dotnet", "Epiceries.Desktop.dll"]

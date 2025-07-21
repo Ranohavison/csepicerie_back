@@ -10,27 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56cc2e33-5427-4d4e-b1bd-912cb19d687c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/AchatEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/AchatEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/CategoryEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/CategoryEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/ClientEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/ClientEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/DepenseEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/DepenseEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/DetailsAchatEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/DetailsAchatEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/DetailsVenteEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/DetailsVenteEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/FournisseurEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/FournisseurEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/ParametreEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/ParametreEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/PermissionEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/PermissionEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/PointageEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/PointageEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/ProduitEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/ProduitEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/RapportEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/RapportEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/RoleEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/RoleEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/RolesPermissionEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/RolesPermissionEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/SauvegardeEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/SauvegardeEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/StockMouvementEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/StockMouvementEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/UtilisateurEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/UtilisateurEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Endpoints/VenteEndpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Endpoints/VenteEndpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/back.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/back/back.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/back/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Models/CsepicerieDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Models/CsepicerieDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +141,7 @@
       <updated>1752912150096</updated>
       <workItem from="1752912203056" duration="4992000" />
       <workItem from="1752920066837" duration="8391000" />
-      <workItem from="1753098301462" duration="2688000" />
+      <workItem from="1753098301462" duration="10901000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing server epicery project">
       <option name="closed" value="true" />
@@ -253,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752924798802</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add group endpoint and fixe api bugs">
+      <option name="closed" value="true" />
+      <created>1753102216102</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1753102216102</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +269,8 @@
     <MESSAGE value="Add conception directory." />
     <MESSAGE value="Add EndPoint for Models Permission, Pointage and Produit" />
     <MESSAGE value="Add EndPoint for Models Rapport, Role, RolesPermission, Sauvegarde, StockMouvement, Utilisateur and Vente." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add EndPoint for Models Rapport, Role, RolesPermission, Sauvegarde, StockMouvement, Utilisateur and Vente." />
+    <MESSAGE value="Add group endpoint and fixe api bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add group endpoint and fixe api bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -292,19 +287,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/back/Endpoints/RolesPermissionEndpoints.cs</url>
-          <line>21</line>
-          <properties documentPath="$PROJECT_DIR$/back/Endpoints/RolesPermissionEndpoints.cs" containingFunctionPresentation="Lambda expression inside Method 'MapRolesPermissionEndpoints'">
-            <startOffsets>
-              <option value="742" />
-            </startOffsets>
-            <endOffsets>
-              <option value="743" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
