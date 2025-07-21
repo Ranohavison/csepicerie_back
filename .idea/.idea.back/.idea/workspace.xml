@@ -9,10 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56cc2e33-5427-4d4e-b1bd-912cb19d687c" name="Changes" comment="">
+    <list default="true" id="56cc2e33-5427-4d4e-b1bd-912cb19d687c" name="Changes" comment="Pret pour le deploiement">
       <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources.local.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources/339379de-cf70-4082-885f-c6217500ca88.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources/339379de-cf70-4082-885f-c6217500ca88/storage_v2/_src_/database/csepicerie_db.34hP8w.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources/339379de-cf70-4082-885f-c6217500ca88/storage_v2/_src_/database/csepicerie_db.34hP8w/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources/339379de-cf70-4082-885f-c6217500ca88/storage_v2/_src_/database/csepicerie_db.34hP8w/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/dataSources/339379de-cf70-4082-885f-c6217500ca88/storage_v2/_src_/database/csepicerie_db.34hP8w/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/back/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/Models/CsepicerieDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Models/CsepicerieDbContext.cs" afterDir="false" />
@@ -142,6 +147,7 @@
       <workItem from="1752912203056" duration="4992000" />
       <workItem from="1752920066837" duration="8391000" />
       <workItem from="1753098301462" duration="10901000" />
+      <workItem from="1753130118841" duration="616000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing server epicery project">
       <option name="closed" value="true" />
@@ -247,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753102216102</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Pret pour le deploiement">
+      <option name="closed" value="true" />
+      <created>1753130741442</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1753130741442</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +284,8 @@
     <MESSAGE value="Add EndPoint for Models Permission, Pointage and Produit" />
     <MESSAGE value="Add EndPoint for Models Rapport, Role, RolesPermission, Sauvegarde, StockMouvement, Utilisateur and Vente." />
     <MESSAGE value="Add group endpoint and fixe api bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add group endpoint and fixe api bugs" />
+    <MESSAGE value="Pret pour le deploiement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pret pour le deploiement" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
