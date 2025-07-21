@@ -55,15 +55,32 @@ public partial class CsepicerieDbContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            var config = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("appsettings.json")
-                .Build();
+#if DEBUG
+            // Charger depuis le fichier .env uniquement en développement local
+            DotNetEnv.Env.Load();
+#endif
+            var connectionString = Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING");
 
-            var connectionString = config.GetConnectionString("DefaultConnection");
+            if (string.IsNullOrWhiteSpace(connectionString))
+            {
+                // Fallback vers appsettings.json (utile uniquement localement)
+                var config = new ConfigurationBuilder()
+                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                    .Build();
+
+                connectionString = config.GetConnectionString("DefaultConnection");
+            }
+
+            if (string.IsNullOrWhiteSpace(connectionString))
+            {
+                throw new InvalidOperationException("Aucune chaîne de connexion PostgreSQL n’a été trouvée.");
+            }
+
             optionsBuilder.UseNpgsql(connectionString);
         }
     }
+
 // #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         // => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=csepicerie_db;Username=csepicerie_user;Password=csEpiceriePass");
         // => optionsBuilder.UseNpgsql("postgresql://neondb_owner:npg_n9fVOmLl4TPQ@ep-small-recipe-ab8ufpbg-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require;Trust Server Certificate=true");
