@@ -1,0 +1,40 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+
+# Dossiers de build et de publication
+/bin/
+/obj/
+/publish/
+
+# Fichiers temporaires de Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Fichiers spécifiques à Visual Studio Code
+.vscode/
+
+# Fichiers personnels et caches
+*.cache
+*.log
+
+# Répertoires de packages NuGet
+.nuget/
+
+# Fichiers générés par les outils de tests, de profiling ou d'analyse
+TestResults/
+*.trx
+*.coverage
+
+# Fichiers spécifiques à Rider ou JetBrains
+.idea/
+*.dotCover
+
+# Fichiers système
+.DS_Store
+Thumbs.db
