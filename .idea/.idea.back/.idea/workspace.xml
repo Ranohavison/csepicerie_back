@@ -10,11 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56cc2e33-5427-4d4e-b1bd-912cb19d687c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/back/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/.env" beforeDir="false" afterPath="$PROJECT_DIR$/back/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/Models/CsepicerieDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Models/CsepicerieDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/back.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/back/back.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +140,10 @@
       <workItem from="1752920066837" duration="8391000" />
       <workItem from="1753098301462" duration="10901000" />
       <workItem from="1753130118841" duration="1677000" />
+      <workItem from="1753177332645" duration="1516000" />
+      <workItem from="1753178924329" duration="133000" />
+      <workItem from="1753190030345" duration="189000" />
+      <workItem from="1753200876286" duration="4437000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing server epicery project">
       <option name="closed" value="true" />

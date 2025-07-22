@@ -1,7 +1,11 @@
 using back.AchatEndpoints;
 using back.Endpoints;
 using back.Models;
+using dotenv.net;
 using Microsoft.EntityFrameworkCore;
+// using DotNetEnv;
+
+DotEnv.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,6 +67,12 @@ app.MapGet("/weatherforecast", () =>
     })
     .WithName("GetWeatherForecast")
     .WithOpenApi();
+
+app.MapGet("/test", () =>
+{
+    var myVariable = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
+    return $"MY_VARIABLE: {myVariable}";
+});
 
 app.MapAchatEndpoints();
 

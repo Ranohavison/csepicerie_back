@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-
+using dotenv.net;
 namespace back.Models;
 
 public partial class CsepicerieDbContext : DbContext
@@ -53,37 +53,12 @@ public partial class CsepicerieDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        if (!optionsBuilder.IsConfigured)
-        {
-#if DEBUG
-            // Charger depuis le fichier .env uniquement en développement local
-            DotNetEnv.Env.Load();
-#endif
-            var connectionString = Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING");
-
-            if (string.IsNullOrWhiteSpace(connectionString))
-            {
-                // Fallback vers appsettings.json (utile uniquement localement)
-                var config = new ConfigurationBuilder()
-                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                    .Build();
-
-                connectionString = config.GetConnectionString("DefaultConnection");
-            }
-
-            if (string.IsNullOrWhiteSpace(connectionString))
-            {
-                throw new InvalidOperationException("Aucune chaîne de connexion PostgreSQL n’a été trouvée.");
-            }
-
-            optionsBuilder.UseNpgsql(connectionString);
-        }
+        DotEnv.Load();
+        var connection = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
+        optionsBuilder.UseNpgsql(connection);
     }
-
-// #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        // => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=csepicerie_db;Username=csepicerie_user;Password=csEpiceriePass");
-        // => optionsBuilder.UseNpgsql("postgresql://neondb_owner:npg_n9fVOmLl4TPQ@ep-small-recipe-ab8ufpbg-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require;Trust Server Certificate=true");
+// warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        // => optionsBuilder.UseNpgsql("Host=localhost;Database=neondb;Username=neondb_owner;Password=npg_n9fVOmLl4TPQ;Ssl Mode=Require;Trust Server Certificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
