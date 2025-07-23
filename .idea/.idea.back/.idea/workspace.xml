@@ -11,9 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="56cc2e33-5427-4d4e-b1bd-912cb19d687c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.back/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/back/.env" beforeDir="false" afterPath="$PROJECT_DIR$/back/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Migrations/20250721150448_InitialCreate.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Migrations/20250721150448_InitialCreate.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/back/Models/CsepicerieDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Models/CsepicerieDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/back/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +38,11 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Ranohavison/csepicerie_back.git&quot;,
-    &quot;accountId&quot;: &quot;d837e5db-831b-4231-813a-c01c04b1dbc7&quot;
+    &quot;accountId&quot;: &quot;578ae566-8073-4370-975a-eabcb4108d9b&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/mandresy-ranohavison/Documents/Projets/ecole/cs/epiceries/back/back/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/mandresy-ranohavison/Documents/Projets/ecole/cs/epiceries/back/back/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/Ranohavison/RiderProjects/csepicerie_back/back/Models/CsepicerieDbContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -65,7 +67,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -144,6 +146,8 @@
       <workItem from="1753178924329" duration="133000" />
       <workItem from="1753190030345" duration="189000" />
       <workItem from="1753200876286" duration="4437000" />
+      <workItem from="1753205528009" duration="6664000" />
+      <workItem from="1753268582821" duration="3022000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing server epicery project">
       <option name="closed" value="true" />
@@ -265,7 +269,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753130768728</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fix bug about environment variable">
+      <option name="closed" value="true" />
+      <created>1753207635216</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1753207635216</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update docker configurations">
+      <option name="closed" value="true" />
+      <created>1753211644897</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1753211644897</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +293,17 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Initializing server epicery project" />
@@ -290,7 +321,9 @@
     <MESSAGE value="Add group endpoint and fixe api bugs" />
     <MESSAGE value="Pret pour le deploiement" />
     <MESSAGE value="Add change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add change" />
+    <MESSAGE value="Fix bug about environment variable" />
+    <MESSAGE value="update docker configurations" />
+    <option name="LAST_COMMIT_MESSAGE" value="update docker configurations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

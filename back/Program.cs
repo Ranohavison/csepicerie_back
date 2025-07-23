@@ -70,7 +70,7 @@ app.MapGet("/weatherforecast", () =>
 
 app.MapGet("/test", () =>
 {
-    var myVariable = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
+    var myVariable = Environment.GetEnvironmentVariable("DB_CONNECTION");
     return $"MY_VARIABLE: {myVariable}";
 });
 
